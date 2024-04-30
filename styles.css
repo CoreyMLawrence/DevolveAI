@@ -1,0 +1,308 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #2a2a2a; /* Dark background color */
+  color: #ffffff; /* Light text color */
+  font-family: 'Courier New', Courier, monospace; /* Use a monospaced font */
+  font-size: 16px; /* Set font size */
+  padding: 1.5em 0 1.5em 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: #ffffff; /* Light text color for headings */
+}
+h2 {
+  margin-top: -1em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern sans-serif font */
+}
+
+.index{
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  height: 60vh;
+}
+
+#logo {
+  height: 4em;
+  margin-left: 1em;
+}
+
+/* Styles for generated text */
+#textBox {
+  position: relative; /* Add relative positioning to enable absolute positioning */
+  padding-top: 1.5em;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  margin-top: 1em;
+  margin-left: 1em;
+  border-radius: 1em;
+  white-space: pre-wrap;
+  max-width: 64em;
+  min-width: 65vw;
+  min-height: 24em;
+}
+
+#copyText {
+  position: absolute; /* Position the copyText button absolutely */
+  top: 2em; /* Position it at the top */
+  right: 2em; /* Position it at the right */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  opacity: 0;
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.copyIcon {
+  width: 4em;
+  content: url('clipboard.png');
+}
+
+.copyIcon:hover {
+  content: url('clipboard-color.png');
+  transition: all 1.5s ease;
+}
+
+.copyIconClicked {
+  width: 4em;
+  content: url('clipboard-check.png');
+}
+
+.copyIconClicked:hover {
+  content: url('clipboard-check-colored.png');
+  transition: all 1.5s ease;
+}
+
+#generatedText {
+  margin-top: -3em;
+  padding-left: 3em;
+  padding-right: 2.5em;
+}
+
+#inputBox {
+  padding-top: 1.5em;
+  background-color: #1e1e1e; /* Dark background color */
+  color: #d4d4d4; /* Light text color */
+  font-family: 'Courier New', Courier, monospace; /* Use a monospaced font */
+  font-size: 1em; /* Set font size */
+  margin-top: 1em; /* Adjust margin as needed */
+  margin-left: 1em; /* Adjust margin as needed */
+  border-radius: 1em; /* Add some border radius for aesthetics */
+  min-width: 75vw; /* Set minimum width */
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  margin: 1em;
+}
+.input-container input[type='text'] {
+  flex: 1;
+  margin-right: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 1em;
+  box-sizing: border-box;
+}
+.input-container button {
+  background-color: #ff7999; /* Pink background color for the button */
+  color: #ffffff; /* White text color for the button */
+  border: none; /* Remove border */
+  padding: 0.75em 1.25em; /* Add padding */
+  font-size: 1em; /* Increase font size */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.8s ease; /* Smooth transition for background color */
+  border-radius: 0.5em; /* Add some border radius for aesthetics */
+}
+
+.input-container button:hover {
+  filter: contrast(150%);
+  filter: brightness(80%);
+  filter: saturate(200%);
+}
+
+#inputText {
+  padding-left: 2.5em; /* Adjust padding as needed */
+  padding-right: 2.5em; /* Adjust padding as needed */
+  width: calc(100% - 5.5em); /* Calculate width */
+  border: none; /* Remove border */
+  background: none; /* Remove background */
+  color: inherit; /* Inherit text color */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern sans-serif font */
+  font-size: 1.2em;
+}
+
+#inputText:focus {
+  outline: none; /* Remove focus outline */
+}
+
+#explanation-box {
+  max-width: 60em;
+  min-width: 61vw;
+  margin: 0.25em auto 0 auto;
+  padding: 1em 2em 1em 2em; /* Add padding for generated text */
+}
+#explanation {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern sans-serif font */
+  font-size: 1.1em; /* Set font size for generated text */
+  opacity: 0; /* Start with opacity 0 */
+  transition: opacity 1s ease; /* Add transition for opacity change */
+  text-justify: distribute-all-lines;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start with opacity 0 */
+  }
+  to {
+    opacity: 1; /* End with opacity 1 */
+  }
+}
+
+#submit-button {
+  margin-top: 1em;
+  background-color: #ff7999; /* Pink background color for the button */
+  color: #ffffff; /* White text color for the button */
+  border: none; /* Remove border */
+  padding: 0.75em 1.25em; /* Add padding */
+  font-size: 1em; /* Increase font size */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.8s ease; /* Smooth transition for background color */
+  border-radius: 0.5em; /* Add some border radius for aesthetics */
+}
+
+#submit-button:hover {
+  background-color: #ff5e78; /* Darker pink background color on hover */
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  margin-top: -17em;
+  margin-left: -10em;
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-right-color: #ff7999;
+  animation: l15 1s infinite linear;
+}
+.loader::before,
+.loader::after {
+  content: '';
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+  animation: l15 2s infinite;
+}
+.loader::after {
+  margin: 8px;
+  animation-duration: 3s;
+}
+@keyframes l15 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+h2 {
+  color: #ffffff; /* Light text color for headings */
+  margin-bottom: 1em; /* Add some space below the heading */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em; /* Add space above the form */
+}
+
+input[type='file'] {
+  margin-bottom: 1em; /* Add some space below the file input */
+}
+#file-label {
+  font-family: 'Courier New', Courier, monospace;
+  width: 85%;
+  text-align: center;
+}
+
+p {
+  color: #ffffff; /* Light text color */
+}
+
+.upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 65vw;
+}
+
+.upload-box {
+  width: 30em;
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 35vw;
+  min-height: 40vh;
+  background-color: #1e1e1e; /* Dark background color for generated text */
+  border-radius: 1em; /* Add some border radius for aesthetics */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.upload-box.dragover {
+  background-color: #6a424c; /* Change background color when dragged over */
+  border: 2px dashed #ffffff; /* Add dashed border when dragged over */
+}
+
+.menu {
+  padding-top: 3.75em;
+  min-height: 5em;
+  margin: 1em 0 1em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern sans-serif font */
+}
+
+.menu-item {
+  color: #ffffff; /* White text color */
+  text-decoration: none;
+  padding: 1em 2em; /* Increased padding */
+  transition: color 0.3s ease;
+  font-size: 1.1em; /* Larger font size */
+}
+
+.menu-item:hover {
+  color: #ff7999; /* Change text color on hover */
+}
+
+.current-page {
+  color: #ff7999; /* Text color for current page */
+}
+
+.arrow {
+  color: #ffffff; /* White arrow color */
+  margin: 0 10px; /* Adjust margin as needed */
+  font-size: 1.5em; /* Larger arrow size */
+}
+
+.fa-angle-right {
+  font-size: inherit; /* Inherit font size from parent */
+}

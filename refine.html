@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./gemini_favicon.png" sizes="any" type="image/png" />
+
+    <title>Refine</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Link to the CSS file -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Empty div to display generated text -->
+    <div style="display: flex; flex-direction: row">
+      <div style="display: flex; flex-direction: column">
+        <a href="./index.php" style="width: 20em"
+          ><img src="devolve.png" alt="devolve logo" id="logo"
+        /></a>
+        <div class="input-container">
+          <input type="text" id="inputText" placeholder="Enter text here" />
+          <button
+            id="submitBtn"
+            style="background: none; border: none; cursor: pointer"
+          >
+            <img src="send.png" alt="Submit" width="44" height="44" />
+          </button>
+        </div>
+        <div id="textBox">
+          <button id="copyText">
+            <img
+              id="copyID"
+              class="copyIcon"
+              alt="Clipboard"
+              onclick="copyText()"
+            />
+          </button>
+          <div id="generatedText"></div>
+        </div>
+      </div>
+      <div class="menu">
+        <a href="./index.php" class="menu-item">Upload</a>
+        <span class="arrow"><i class="fas fa-arrow-down"></i></span>
+        <a href="./assembly.html" class="menu-item">Assembly</a>
+        <span class="arrow"><i class="fas fa-arrow-down"></i></span>
+        <a href="./gemini.html" class="menu-item">Devolve</a>
+        <span class="arrow"><i class="fas fa-arrow-down"></i></span>
+        <a href="./refine.html" class="menu-item current-page">Refine</a>
+        <span class="arrow"><i class="fas fa-arrow-down"></i></span>
+        <a href="#" id="downloadLink" class="menu-item">Download</a>
+      </div>
+    </div>
+    <div class="loader" style="margin-top: -10em"></div>
+    <!-- Include the JavaScript file -->
+    <script type="module" src="refine.js"></script>
+    <script>
+      function copyText() {
+        // Select the text inside the element
+        const textToCopy = document.getElementById('generatedText');
+        const range = document.createRange();
+        range.selectNode(textToCopy);
+        window.getSelection().removeAllRanges(); // Clear current selection
+        window.getSelection().addRange(range); // Select the text
+
+        // Copy the selected text
+        document.execCommand('copy');
+
+        // Deselect the text
+        window.getSelection().removeAllRanges();
+        // Change the icon to indicate copied
+        let iconElement = document.getElementById('copyID');
+        iconElement.classList.add('copyIconClicked');
+        iconElement.classList.remove('copyIcon');
+      }
+      // Add event listener for Enter key
+      document
+        .getElementById('inputText')
+        .addEventListener('keypress', function (e) {
+          // Check if Enter key is pressed (key code 13)
+          if (e.key === 'Enter') {
+            e.preventDefault(); // Prevent form submission
+            document.getElementById('submitBtn').click(); // Trigger click event on submit button
+          }
+        });
+    </script>
+  </body>
+</html>
