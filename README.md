@@ -16,6 +16,12 @@ DevolveAI is a web-based AI-driven decompiler designed to transform executable f
 5. Optionally, apply AI-driven customizations to the source code.
 6. Save or export the transformed source code as needed.
 
+## Screenshots
+
+![Screenshot 1](./Screenshots/1.png)
+![Screenshot 2](./Screenshots/2.png)
+![Screenshot 3](./Screenshots/3.png)
+
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your enhancements.
 
