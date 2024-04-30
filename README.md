@@ -7,6 +7,8 @@ DevolveAI is a web-based AI-driven decompiler designed to transform executable f
 - **Language Translation:** Allows users to translate extracted source code into multiple programming languages.
 - **Customization with AI:** Enables further customization and enhancement of source code using AI-driven tools.
 - **Cross-Platform Compatibility:** Works seamlessly across different operating systems and environments.
+- **Effortless Code Management:** With built-in copy and download buttons, saving the code to your machine and running it yourself is as easy as a click.
+
 
 ## Usage
 1. Visit DevolveAI (this is a code preview - hosted website coming soon).
