@@ -18,9 +18,14 @@ DevolveAI is a web-based AI-driven decompiler designed to transform executable f
 
 ## Screenshots
 
-![Screenshot 1](./Screenshots/1.png)
-![Screenshot 2](./Screenshots/2.png)
-![Screenshot 3](./Screenshots/3.png)
+1. **Upload your file**
+   ![Screenshot 1](./Screenshots/1.png)
+
+2. **Decompile into C++**
+   ![Screenshot 2](./Screenshots/2.png)
+
+3. **Customize by changing language and more**
+   ![Screenshot 3](./Screenshots/3.png)
 
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your enhancements.
