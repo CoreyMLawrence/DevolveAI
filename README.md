@@ -1,6 +1,17 @@
 # DevolveAI
 DevolveAI is a web-based AI-driven decompiler designed to transform executable files into their original source code. With its sleek user interface and intuitive functionality, DevolveAI empowers users to effortlessly reverse engineer executables and access their underlying source code. Moreover, once the source code is extracted, DevolveAI offers seamless translation into various programming languages and further customization through AI-driven enhancements.
 
+## Screenshots
+
+**Upload your file**
+   ![Screenshot 1](./Screenshots/1.png)
+
+**Decompile into C++**
+   ![Screenshot 2](./Screenshots/2.png)
+
+**Customize by changing language and more**
+   ![Screenshot 3](./Screenshots/3.png)
+
 ## Features
 - **AI-Powered Decompilation:** Utilizes cutting-edge AI algorithms to decompile executables into human-readable source code.
 - **User-Friendly Interface:** Designed with a gorgeous and intuitive user interface for effortless navigation and interaction.
@@ -17,17 +28,6 @@ DevolveAI is a web-based AI-driven decompiler designed to transform executable f
 4. Once the source code is extracted, choose the target programming language for translation.
 5. Optionally, apply AI-driven customizations to the source code.
 6. Save or export the transformed source code as needed.
-
-## Screenshots
-
-1. **Upload your file**
-   ![Screenshot 1](./Screenshots/1.png)
-
-2. **Decompile into C++**
-   ![Screenshot 2](./Screenshots/2.png)
-
-3. **Customize by changing language and more**
-   ![Screenshot 3](./Screenshots/3.png)
 
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your enhancements.
