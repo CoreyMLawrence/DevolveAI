@@ -2,4 +2,4 @@
 [*]
 # Add rules to ignore the specific folder and its contents
 exclude_patterns = 
-    your-folder/**/*
+    ./**/*
