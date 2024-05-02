@@ -1,2 +1,5 @@
-[*.*]
-generated_code = true
+# Set default rules for all files
+[*]
+# Add rules to ignore the specific folder and its contents
+exclude_patterns = 
+    your-folder/**/*
